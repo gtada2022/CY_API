@@ -1,0 +1,14 @@
+{
+  "name": "cy_api",
+  "version": "1.0.0",
+  "description": "testes cypress usando api",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "George Tada",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.7.0"
+  }
+}
