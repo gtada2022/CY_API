@@ -82,7 +82,7 @@ describe('API test automated', () => {
       expect(res.body).to.not.have.property('password', 'Password12')
     })
   })
-    
+
 
 
 })
