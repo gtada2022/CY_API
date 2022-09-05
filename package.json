@@ -4,7 +4,12 @@
   "description": "testes cypress usando api",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtada2022/CY_API.git"
   },
   "author": "George Tada",
   "license": "ISC",
