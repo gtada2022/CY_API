@@ -4,6 +4,7 @@ describe('API test automated', () => {
     cy.request({
       method: 'GET',
       url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
+      
     }).then(res => {
       console.log(res)
     })

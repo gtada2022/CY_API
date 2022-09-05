@@ -7,10 +7,7 @@
     "test": "cypress run",
     "cy:open": "cypress open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gtada2022/CY_API.git"
-  },
+
   "author": "George Tada",
   "license": "ISC",
   "devDependencies": {
