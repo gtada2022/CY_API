@@ -17,7 +17,7 @@ describe('API test automated', () => {
     cy.request('https://fakerestapi.azurewebsites.net/api/v1/Users').its('body').should('have.length', 10)
   })
 
-  it('Verify the new item exists exists', () => {
+  it('Verify the  item exists ', () => {
     cy.request({
       method: 'GET',
       url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
