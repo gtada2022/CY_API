@@ -1,6 +1,6 @@
 describe('API test automated', () => {
 
-  it('Add a new pet to the store', () => {
+  it('Search api', () => {
     cy.request({
       method: 'GET',
       url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
@@ -9,7 +9,7 @@ describe('API test automated', () => {
     })
   })
 
-  it('verify the request returns the correct status code', () => {
+  it('verify the request returns the correct status code users', () => {
     cy.request('https://fakerestapi.azurewebsites.net/api/v1/Users').its('status').should('be.equal', 200)
   })
 
@@ -30,6 +30,59 @@ describe('API test automated', () => {
     })
   })
 
+  it('Add a new item', () => {
+    cy.request({
+      method: 'POST',
+      url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
+
+      body: {
+        id: 11,
+        userName: 'User 11',
+        password: 'Password11'
+
+      },
+    }).then(res => {
+      console.log(res)
+      expect(res.status).to.equal(200)
+      expect(res.body).to.have.property('id', 11)
+      expect(res.body).to.have.property('userName', 'User 11')
+      expect(res.body).to.have.property('password', 'Password11')
+    })
+
+  })
+
+  it('Update a  item', () => {
+    cy.request({
+      method: 'PUT',
+      url: 'https://fakerestapi.azurewebsites.net/api/v1/Users/11',
+
+      body: {
+        id: 11,
+        userName: 'User 11',
+        password: 'Password12'
+
+      },
+    }).then(res => {
+      console.log(res)
+      expect(res.status).to.equal(200)
+      expect(res.body).to.have.property('id', 11)
+      expect(res.body).to.have.property('userName', 'User 11')
+      expect(res.body).to.have.property('password', 'Password12')
+    })
+  })
+  it('Delete Item ', () => {
+    cy.request({
+      method: 'DELETE',
+      url: 'https://fakerestapi.azurewebsites.net/api/v1/Users/11',
+
+    }).then(res => {
+      console.log(res)
+      expect(res.status).to.equal(200)
+      expect(res.body).to.not.have.property('id', 11)
+      expect(res.body).to.not.have.property('password', 'Password12')
+    })
+  })
+    
 
 
 })
