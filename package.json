@@ -7,10 +7,12 @@
     "test": "cypress run",
     "cy:open": "cypress open"
   },
-
   "author": "George Tada",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.7.0"
+  },
+  "dependencies": {
+    "faker-br": "^0.4.1"
   }
 }
