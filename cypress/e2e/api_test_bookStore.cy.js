@@ -1,35 +1,6 @@
 
-describe('API test automated', () => {
+describe('Teste de Api Livraria ', () => {
 
-  it('Search api', () => {
-    cy.request({
-      method: 'GET',
-      url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
-    }).then(res => {
-      console.log(res)
-    })
-  })
-
-  it('verify the request returns the correct status code users', () => {
-    cy.request('https://fakerestapi.azurewebsites.net/api/v1/Users').its('status').should('be.equal', 200)
-  })
-
-  it('verify the request returns 10 items', () => {
-    cy.request('https://fakerestapi.azurewebsites.net/api/v1/Users').its('body').should('have.length', 10)
-  })
-
-  it('Verify the  item exists ', () => {
-    cy.request({
-      method: 'GET',
-      url: 'https://fakerestapi.azurewebsites.net/api/v1/Users',
-    }).then(res => {
-      expect(res.body).is.not.empty
-      expect(res.status).to.equal(200)
-      
-      expect(res.body[0]).to.have.property('userName', 'User 1')
-      expect(res.body[0]).to.have.property('password', 'Password1')
-    })
-  })
   it('Criando um usuário ', () => {
     var faker = require('faker-br');
     cy.request({
@@ -75,9 +46,6 @@ describe('API test automated', () => {
 
   })
 
-
-  
-
   it('Gerar confirmar se o usuário criado está autorizado', () => {
     
     cy.request({
@@ -120,11 +88,7 @@ describe('API test automated', () => {
     })
   })
 
-
-
-
-
-  it.only('Alugar dois livros de livre escolha', () => {
+  it('Alugar dois livros de livre escolha', () => {
   
     cy.request({
       method: 'POST',
@@ -156,7 +120,7 @@ describe('API test automated', () => {
 
 
 
-  it('Listar os detalhes do usuário com os livros escolhidos', () => {
+  it.only('Listar os detalhes do usuário com os livros escolhidos', () => {
   
     cy.request({
       method: 'GET',
@@ -164,7 +128,7 @@ describe('API test automated', () => {
       
 
     }).then(res => {
-      expect(res.status).to.equal(201)
+      expect(res.status).to.equal(200)
       
       
     })
