@@ -117,10 +117,7 @@ describe('Teste de Api Livraria ', () => {
 
   })
 
-
-
-
-  it.only('Listar os detalhes do usuário com os livros escolhidos', () => {
+  it('Listar os detalhes do usuário com os livros escolhidos', () => {
   
     cy.request({
       method: 'GET',

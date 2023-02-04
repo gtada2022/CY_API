@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+Cypress.Commands.add('acessandoPaginaForms', function () {
+    
+    cy.visit('/')
+    cy.get(':nth-child(2) > :nth-child(1) > .card-up').click()
+
+})
